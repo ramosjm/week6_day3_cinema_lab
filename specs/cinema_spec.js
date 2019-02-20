@@ -46,8 +46,14 @@ describe('Cinema', function () {
     assert.deepStrictEqual(actual,dramaFilms);
   });
 
-  it('should be able to check whether there are some films from a particular year');
-  it('should be able to check whether there are no films from a particular year');
+  it('should be able to check whether there are some films from a particular year',function(){
+    const actual = cinema.hasFilmByYear(2017);
+    assert.ok(actual);
+  });
+  it('should be able to check whether there are no films from a particular year', function () {
+    const actual = cinema.hasFilmByYear(2019);
+    assert.ok(!actual);
+  });
   it('should be able to check whether all films are over a particular length');
   it('should be able to calculate total running time of all films');
 
