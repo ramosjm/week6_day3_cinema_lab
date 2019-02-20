@@ -3,3 +3,7 @@ const Cinema = function (films) {
 };
 
 module.exports = Cinema;
+
+Cinema.prototype.getTitles = function (film) {
+  return this.films.map((film)=> film.title);
+};
