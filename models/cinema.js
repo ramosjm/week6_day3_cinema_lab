@@ -19,3 +19,12 @@ Cinema.prototype.findByGenre = function(genre){
 Cinema.prototype.hasFilmByYear = function(year){
   return this.films.some(film => film.year === year);
 };
+
+Cinema.prototype.overLength = function (length) {
+  return this.films.every(film => film.length >length);
+};
+
+Cinema.prototype.totalRunTime = function(){
+  let total= this.films.reduce((runningTotal, film, initialValue)=> runningTotal + film.length,0);
+  return total;
+};
