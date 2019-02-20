@@ -12,6 +12,7 @@ describe('Cinema', function () {
   let films;
   let cinema;
 
+
   beforeEach(function () {
     moonlight = new Film('Moonlight', 'drama', 2016, 111);
     bladeRunner = new Film('Blade Runner 2049', 'sci-fi', 2017, 164);
@@ -39,7 +40,11 @@ describe('Cinema', function () {
     assert.strictEqual(actual,dunkirk)
   });
 
-  it('should be able to filter films by genre');
+  it('should be able to filter films by genre', function(){
+    const actual = cinema.findByGenre('drama');
+    dramaFilms = [moonlight,trainspotting];
+    assert.deepStrictEqual(actual,dramaFilms);
+  });
 
   it('should be able to check whether there are some films from a particular year');
   it('should be able to check whether there are no films from a particular year');
