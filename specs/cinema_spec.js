@@ -28,13 +28,16 @@ describe('Cinema', function () {
     assert.deepStrictEqual(actual, films);
   });
 
-  it('should be able to get a list of film titles',function(){
+  it('should be able to get a list of film titles', function(){
     const actual = cinema.getTitles();
     const expected = ['Moonlight','Blade Runner 2049','Dunkirk','Black Panther', 'T2 Trainspotting']
     assert.deepStrictEqual(actual,expected)
   });
 
-  it('should be able to find a film by title');
+  it('should be able to find a film by title', function(){
+    const actual = cinema.findByTitle('Dunkirk');
+    assert.strictEqual(actual,dunkirk)
+  });
 
   it('should be able to filter films by genre');
 
